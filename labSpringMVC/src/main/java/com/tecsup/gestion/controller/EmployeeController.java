@@ -36,12 +36,17 @@ public class EmployeeController {
 	@Autowired
 	private ApplicationContext context;
 
-	@GetMapping("/admin/menu")
+	@GetMapping("/user/menu")
 	public String menu() {
 
-		return "/admin/menu";
+		return "/user/menu";
 	}
 
+	@GetMapping("/user/403")
+	public String accessDenied(){
+		return "/user/403";
+	}
+	
 	@GetMapping("/admin/emp/list")
 	public String list(@ModelAttribute("employee") Employee employee, ModelMap model) {
 
